@@ -3,6 +3,20 @@
 //
 #include <iostream>
 using namespace std;
+void bs(int arr[],int size){
+    for(int i=0;i<size-1;i++){
+        bool isSwap= false;
+        for(int j=0;j<size-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
+                isSwap= true;
+            }
+        }
+        if(isSwap== false){
+            break;
+        }
+    }
+}
 int main(){
     int n;
     cin>>n;
@@ -11,6 +25,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
+    bs(arr,n);
     int target;
     cin>>target;
 

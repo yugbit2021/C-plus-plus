@@ -4,8 +4,8 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int trow=7;
-    //cin>>trow;
+    int trow;
+    cin>>trow;
     int row=1;
     while(row<=trow){
         int sp=1;
