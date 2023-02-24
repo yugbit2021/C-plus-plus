@@ -7,14 +7,14 @@ bool sorted(int arr[],int n){
     }
 
     //recursive case
-    if(sorted(arr,n-1) && arr[n-2]<=arr[n-1]){
+    if(sorted(arr+1,n-1) && arr[0]<=arr[1]){
         return true;
     }
     return false;
 }
 int main(){
-    int arr[]={3,4,6,9};
-    int n=4;
+    int arr[]={3,4,6,9,1};
+    int n=5;
     bool ans= sorted(arr,n);
     cout<<ans;
     return 0;
