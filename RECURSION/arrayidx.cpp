@@ -11,6 +11,20 @@ bool ispresent(int arr[],int n ,int i){
     }
     return ispresent(arr,n,i+1);
 }
+
+int firstinxof7(int arr[],int n,int i){
+    if(i==n){
+        return -1;
+    }
+
+    if(arr[i]==7){
+        return i;
+    }
+return firstinxof7(arr,n,i+1);
+}
+
+
+
 int main(){
     int arr[]={3,4,5,6,7,8,9,10};
     int n=sizeof(arr)/sizeof(int);
@@ -19,5 +33,7 @@ int main(){
     }else{
         cout<<"false";
     }
+    cout<<endl;
+    cout<<"Element is present at "<<firstinxof7(arr,n,0)<<endl;
     return 0;
 }
