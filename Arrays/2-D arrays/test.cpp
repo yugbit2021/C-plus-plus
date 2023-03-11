@@ -2,7 +2,15 @@
 using namespace std;
 
 int main(){
-    int arr[2][4]={{2,3,4,5},{1,5,6,7}};
-    cout<<arr[1][3];
+    int arr[100][100];
+
+   int rows,cols;
+   cin>>rows>>cols;
+
+   for(int i=0;i<=rows-1;i++){
+    for(int j=0;j<=cols-1;j++){
+        cin>>arr[i][j];
+    }
+   }
     return 0;
 }
