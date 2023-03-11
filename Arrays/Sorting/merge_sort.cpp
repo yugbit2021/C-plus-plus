@@ -3,11 +3,10 @@ using namespace std;
 void mergetwosortedarray(int arr[],int start,int end){
     int temp[1000];
     int i=start;
-    int mid=(start+(end-start)/2);
+    int mid=(start+end)/2;
     int j=mid+1;
-    int k=0;
+    int k=start;
     while(i<=mid && j<=end){
-
         if(arr[i]<arr[j]){
         temp[k]=arr[i];
         i++;
@@ -31,7 +30,7 @@ void mergetwosortedarray(int arr[],int start,int end){
     }
 
     //temp ko copy karna arr wali array me
-    for(int l=start;l<=end;i++){
+    for(int l=start;l<=end;l++){
         arr[l]=temp[l];
     }
     
@@ -39,10 +38,12 @@ void mergetwosortedarray(int arr[],int start,int end){
 
 void ms(int arr[],int start,int end){
     //base case
-
+    if(start==end){
+        return;
+    }
 
     //rec case
-    int mid=(start+(end-start))/2;
+    int mid=(start+end)/2;
     ms(arr,start,mid); // 4,2,1 === 1,2,4
     ms(arr,mid+1,end); //5,3 ==== 3,5
     mergetwosortedarray(arr,start,end); // 1,2,3,4,5
