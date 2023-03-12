@@ -17,9 +17,9 @@ void subsequences(char inp[100],int i,char out[100],int j){
 }
 
 int main(){
-    char inp[100]="abc";
+    char inp[100];
     char out[100];
-    //cin>>inp; //"abc"
+    cin>>inp; //"abc"
     subsequences(inp,0,out,0);
     return 0;
 }
