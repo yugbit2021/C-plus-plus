@@ -9,5 +9,6 @@ int main(){
     //delete keyword
     //delete a variable;
     delete aptr;
+    aptr=NULL;
     return 0;
 }
