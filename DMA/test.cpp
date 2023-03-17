@@ -5,5 +5,9 @@ int main(){
     int*aptr=new int; 
     *aptr=10;
     cout<<*aptr;
+
+    //delete keyword
+    //delete a variable;
+    delete aptr;
     return 0;
 }
