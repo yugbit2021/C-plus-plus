@@ -15,6 +15,10 @@ class car{
         this->price=price;
         this->seats=seats;
     }
+    // destructor
+    ~car(){
+
+    };
 };
 
 int main(){
