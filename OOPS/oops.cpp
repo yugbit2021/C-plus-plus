@@ -8,10 +8,14 @@ class car{
     string color;
     int price;
     int seats;
+    // car(){
+
+    // }
 };
 
 int main(){
-    car car1;
+    //whenever object is created contructor is called 
+    car car1; //car1 is the object
     car1.name="BMW";
     car1.color="Black";
     car1.price=1000000;
