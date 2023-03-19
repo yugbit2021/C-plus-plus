@@ -18,4 +18,6 @@ int main(){
     car1.seats=6;
     cout<<car1.name<<endl;
     cout<<car1.price<<endl;
+
+    return 0;
 }
