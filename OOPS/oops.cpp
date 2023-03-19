@@ -10,7 +10,6 @@ class car{
     int seats;
     //constructor
     car(string name,string color,int price,int seats){
-        cout<<"coding"<<endl;
         this->name=name;
         this->color=color;
         this->price=price;
