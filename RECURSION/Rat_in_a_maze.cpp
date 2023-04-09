@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+int c=0;
 bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
     //base case
     if(i==rows-1 && j==cols-1){
@@ -41,9 +41,10 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
 }
 
 int main(){
-    char maze[4][5]={"UBUU","UUUU","BBUU","UBUU"}; // null char h isliye 5 * 5 liye
+    char maze[4][5]={"UUBU","UBUU","BBUU","UBUU"}; // null char h isliye 5 * 5 liye
 
     int sol[4][4]={0};
     ratinmaze(maze,sol,0,0,4,4);
+    cout<<"total paths "<<c<<endl;
     return 0;
 }
