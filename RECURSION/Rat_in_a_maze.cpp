@@ -12,7 +12,8 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
             }
             cout<<endl;
         }
-        return true;
+        cout<<endl;
+        return false;
     }
 
     //recursive case
@@ -40,7 +41,7 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
 }
 
 int main(){
-    char maze[4][5]={"UBUU","UUUU","BBBU","UBBU"}; // null char h isliye 5 * 5 liye
+    char maze[4][5]={"UBUU","UUUU","BBUU","UBBU"}; // null char h isliye 5 * 5 liye
 
     int sol[4][4]={0};
     ratinmaze(maze,sol,0,0,4,4);
