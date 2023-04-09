@@ -12,7 +12,9 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
             }
             cout<<endl;
         }
+        c++;
         cout<<endl;
+        sol[i][j]=0;
         return false;
     }
 
@@ -41,7 +43,7 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
 }
 
 int main(){
-    char maze[4][5]={"UUBU","UBUU","BBUU","UBUU"}; // null char h isliye 5 * 5 liye
+    char maze[4][5]={"UUBU","UUUU","BBUU","UBUU"}; // null char h isliye 5 * 5 liye
 
     int sol[4][4]={0};
     ratinmaze(maze,sol,0,0,4,4);
