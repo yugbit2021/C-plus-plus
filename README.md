@@ -1,1 +1,1 @@
-I have written all codes from my coding classes.
+I'm writting all the codes from my class notes.
