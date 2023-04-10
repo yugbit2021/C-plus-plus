@@ -17,6 +17,7 @@ void phonekeypad(string inp,int i,string out){
         //out[j]=arr[indx][l];
         out=out+arr[indx][l];
         phonekeypad(inp,i+1,out);
+        out.pop_back();
     }
     
 }
