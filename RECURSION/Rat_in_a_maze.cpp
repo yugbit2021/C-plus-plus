@@ -30,7 +30,7 @@ bool ratinmaze(char maze[4][5],int sol[4][4],int i, int j,int rows,int cols){
     }
    }
 
-   //Backward
+   //downward
    if(i<=rows-2 &&maze[i+1][j]!='B'){
     bool aagekaansmila=ratinmaze(maze,sol,i+1,j,rows,cols);
     if(aagekaansmila==true){
