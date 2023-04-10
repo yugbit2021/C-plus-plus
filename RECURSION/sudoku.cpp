@@ -63,8 +63,9 @@ bool sudokusolver(int mat[9][9],int i,int j, int n){
             mat[i][j]=0; // backtracking
         }
     }
-    return false;
+
     }
+    return false;
 }
 
 int main(){
