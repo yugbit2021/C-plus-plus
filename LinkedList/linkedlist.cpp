@@ -26,6 +26,34 @@ void insertattail(node*&head, node*&tail ,int d){
         p=tail;
     }
 }
+int lengthofll(node*&head){
+    int co=0;
+    node*temp=head;
+    while(temp!=NULL){
+        co++;
+    temp->next;
+    }
+    return co;
+    
+}
+
+void deleteatanypos(node*&head , node*&tail , int pos){
+    if(pos==0){
+        deleteatfront(head,tail);
+    }
+    else if(pos>lengthofll(head)){
+        deleteattail(head,tail);
+    }else{
+        node*temp=head;
+        for(int jump=1;jump<=pos-1;jump++){
+            temp=temp->next;
+        }
+        node*t=temp->next;
+        temp->next=t->next;
+        delete t;
+        t=NULL;
+    }
+}
 
 void insertatfirst(node*&head, node*&tail, int d){
     //linkedlist is empty
@@ -70,6 +98,24 @@ void deleteatfront(node*&head, node*&tail){
     }
 }
 
+void insertatanypos(node*&head , node*&tail , int d , int pos){
+    if(pos==0){
+        insertatfirst(head,tail,d);
+    }
+    else if(pos>=lengthofll(head)){
+        insertattail(head,tail , d);
+    }else{
+        node*temp=head;
+
+        for(int jump=1;jump<=pos-1;jump++){
+            temp=temp->next;
+        }
+        node*p=new node(d);
+        p->next=temp->next;
+        temp->next=p;
+    }
+}
+
 int main(){
     // node x(9);
     // node y(3);
@@ -85,6 +131,7 @@ int main(){
     insertatfirst(head,tail,9);
     insertatfirst(head,tail,6);
     insertattail(head,tail,12);
+    insertatanypos(head,tail,17,3);
     deleteatfront(head,tail);
     printll(head);
 
