@@ -12,6 +12,16 @@ class node{
         next=NULL;
     }
 };
+int midpointofll(node*head){
+    node*slow=head;
+    node*fast=head;
+
+    while(fast->next!=NULL){
+        fast=fast->next->next;
+    slow=slow->next;
+    }
+    return slow->data;
+}
 
 void insertatfirst(node*&head, node*&tail, int d){
     //linkedlist is empty
@@ -186,6 +196,8 @@ int main(){
     else{
         cout<<"Key is not present";
     }
+    cout<<endl;
+    cout<<"mid point is"<<midpointofll(head)<<endl;
 
     return 0;
 }

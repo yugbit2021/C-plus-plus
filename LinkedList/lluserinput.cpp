@@ -42,17 +42,55 @@ void printll(node*head){
     }
     cout<<endl;
 }
+void insertatfirst(node*&head, node*&tail, int d){
+    //linkedlist is empty
+    if(head==NULL){
+        //node y(d); I will not create it statically
+        node*p=new node(d);
+        head=p;
+        tail=p;
+    }
+    //agar linkedlist is not empty
+    else{
+        node*p=new node(d);
+        p->next=head;
+        head=p;
+    }
+}
+// //mid point of odd ll without using length function
+// int midpointofll(node*head){
+//     node*slow=head;
+//     node*fast=head;
+
+//     while(fast->next!=NULL){
+//         fast=fast->next->next;
+//     slow=slow->next;
+//     }
+//     return slow->data;
+// }
+//mid point of even ll without using length function
+int midpointofll(node*head){
+    node*slow=head;
+    node*fast=head->next;
+
+    while(fast->next!=NULL && fast->next->next!=NULL){
+        fast=fast->next->next;
+    slow=slow->next;
+    }
+    return slow->data;
+}
 int main(){
     node*head=NULL;
     node*tail=NULL;
 
     int n;//5
     cin>>n;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;++i){
         int d;
         cin>>d;
-        insertattail(head,tail,d);
+        insertatfirst(head,tail,d);
     }
-    printll(head);
+    cout<<"mid point is "<<midpointofll(head)<<endl;
+    // printll(head);
     return 0;
 }
