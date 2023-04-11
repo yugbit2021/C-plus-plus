@@ -13,31 +13,6 @@ class node{
     }
 };
 
-void insertattail(node*&head, node*&tail ,int d){
-    //linkedlist is empty
-    if(head==NULL){
-        node*p=new node(d);
-        head=p;
-        tail=p;
-    }
-    else{
-        node*p=new node(d);
-        tail->next=p;
-        p=tail;
-    }
-}
-int lengthofll(node*&head){
-    int co=0;
-    node*temp=head;
-    while(temp!=NULL){
-        co++;
-    temp->next;
-    }
-    return co;
-    
-}
-
-
 void insertatfirst(node*&head, node*&tail, int d){
     //linkedlist is empty
     if(head==NULL){
@@ -61,6 +36,30 @@ void printll(node*head){
         temp=temp->next;
     }
     cout<<endl;
+}
+
+void insertattail(node*&head, node*&tail ,int d){
+    //linkedlist is empty
+    if(head==NULL){
+        node*p=new node(d);
+        head=p;
+        tail=p;
+    }
+    else{
+        node*p=new node(d);
+        tail->next=p;
+        p=tail;
+    }
+}
+int lengthofll(node*&head){
+    int co=0;
+    node*temp=head;
+    while(temp!=NULL){
+        co++;
+    temp=temp->next;
+    }
+    return co;
+    
 }
 
 void deleteatfront(node*&head, node*&tail){
@@ -138,6 +137,30 @@ void deleteatanypos(node*&head , node*&tail , int pos){
         t=NULL;
     }
 }
+bool searchinll(node*&head, int key){
+    node*temp=head;
+    while(temp!=NULL){
+        if(temp->data==key){
+            return true;
+        }
+        temp=temp->next;
+    }
+    return false;
+}
+//searching through recursively
+bool searchinllrec(node*&head, int key){
+    //base case
+    if(head==NULL){
+        return false;
+    }
+
+
+    //rec case
+    if(head->data==key){
+        return true;
+    }
+    return searchinllrec(head->next,key);
+}
 
 int main(){
     // node x(9);
@@ -157,6 +180,12 @@ int main(){
     insertatanypos(head,tail,17,3);
     deleteatfront(head,tail);
     printll(head);
+    if(searchinll(head,18)==true){
+        cout<<"key is present";
+    }
+    else{
+        cout<<"Key is not present";
+    }
 
     return 0;
 }
