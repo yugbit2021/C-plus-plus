@@ -81,7 +81,7 @@ int lengthofll(node*&head){
 void bubblesort(node*&head,node*&tail){
     // address wahi rahega bss data change hoga
     for(int i=0;i<lengthofll(head)-1;i++){
-        for(node*j=head;j->next!=tail;j=j->next){
+        for(node*j=head;j!=tail;j=j->next){
             if(j->data>j->next->data){
                 swap(j->data,j->next->data);
             }
