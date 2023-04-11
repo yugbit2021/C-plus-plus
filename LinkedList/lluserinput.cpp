@@ -21,7 +21,7 @@ void insertattail(node*&head, node*&tail ,int d){
     else{
         node*p=new node(d);
         tail->next=p;
-        p=tail;
+        tail=p;
     }
 }
 bool searchinll(node*head, int key){
@@ -57,27 +57,36 @@ void insertatfirst(node*&head, node*&tail, int d){
         head=p;
     }
 }
-// //mid point of odd ll without using length function
-// int midpointofll(node*head){
-//     node*slow=head;
-//     node*fast=head;
-
-//     while(fast->next!=NULL){
-//         fast=fast->next->next;
-//     slow=slow->next;
-//     }
-//     return slow->data;
-// }
 //mid point of even ll without using length function
 int midpointofll(node*head){
     node*slow=head;
     node*fast=head->next;
 
-    while(fast->next!=NULL && fast->next->next!=NULL){
+    while(fast!=NULL && fast->next!=NULL){
         fast=fast->next->next;
     slow=slow->next;
     }
     return slow->data;
+}
+int lengthofll(node*&head){
+    int co=0;
+    node*temp=head;
+    while(temp!=NULL){
+        co++;
+    temp=temp->next;
+    }
+    return co;
+    
+}
+void bubblesort(node*&head,node*&tail){
+    // address wahi rahega bss data change hoga
+    for(int i=0;i<lengthofll(head)-1;i++){
+        for(node*j=head;j->next!=tail;j=j->next){
+            if(j->data>j->next->data){
+                swap(j->data,j->next->data);
+            }
+        }
+    }
 }
 int main(){
     node*head=NULL;
@@ -88,9 +97,13 @@ int main(){
     for(int i=0;i<n;++i){
         int d;
         cin>>d;
-        insertatfirst(head,tail,d);
+        insertattail(head,tail,d);
     }
     cout<<"mid point is "<<midpointofll(head)<<endl;
-    // printll(head);
+    printll(head);
+    cout<<endl;
+    bubblesort(head,tail);
+    cout<<endl;
+    printll(head);
     return 0;
 }
