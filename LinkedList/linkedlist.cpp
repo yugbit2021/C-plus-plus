@@ -58,7 +58,7 @@ void insertattail(node*&head, node*&tail ,int d){
     else{
         node*p=new node(d);
         tail->next=p;
-        p=tail;
+        tail=p;
     }
 }
 int lengthofll(node*&head){
