@@ -24,6 +24,28 @@ bool checkcyle(node*head){
     }
     return false; 
 }
+
+void createcylce(node*head,int pos){
+    node*temp=head;
+    while(temp->next){
+        temp=temp->next;
+    }
+    node*t=head;
+    for(int jump=1;jump<=pos;jump++){
+        t=t->next;
+    }
+    temp->next=t;
+}
+
+void printll(node*head){
+    node*temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
 void insertattail(node*&head, node*&tail ,int d){
     //linkedlist is empty
     if(head==NULL){
@@ -49,12 +71,17 @@ int main(){
         cin>>d;
         insertattail(head,tail,d);
     }
-    if(checkcyle(head)==true){
-        cout<<"cycle is present";
-    }
-    else{
-        cout<<"not present";
-    }
+    // if(checkcyle(head)==true){
+    //     cout<<"cycle is present";
+    // }
+    // else{
+    //     cout<<"not present";
+    // }
+
+    int pos=2;
+
+    createcylce(head,pos);
+    printll(head); 
 
     return 0;
 }
