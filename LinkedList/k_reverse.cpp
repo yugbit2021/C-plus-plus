@@ -24,14 +24,25 @@ node*reversell(node*head){
     return prev;
 }
 
-kreverse(node*head){
+node*kreverse(node*head,int k){
+    //base case
+    if(head==NULL){
+        return head;
+    }
+
     node*temp=head;
-    for(int jump=1;j<=k-1;jump++){
+    for(int jump=1;jump<=k-1;jump++){
         temp=temp->next;
     }
     node*ptr=temp->next;
     temp->next=NULL;
-    reversell(head);
+    node*nhead=reversell(head);
+    node*t=nhead;
+    for(int jump=1;jump<=k-1;jump++){
+        t=t->next;
+    }
+    t->next=kreverse(ptr,k);
+    return nhead;
 }
 
 void printll(node*head){
@@ -68,8 +79,9 @@ int main(){
         cin>>d;
         insertattail(head,tail,d);
     }
-    node*nhead=reversell(head);
-    printll(nhead);
+    //int k=3;
+    node*nhead1=kreverse(head,3);
+    printll(nhead1);
 
     return 0;
 }
