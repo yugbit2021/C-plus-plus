@@ -14,15 +14,24 @@ using namespace std;
 
 int main(){
 
+    // int arr[]={2,3,4,5,1,7,9,11,9};
+    // int n=sizeof(arr)/sizeof(int);
+    // sort(arr,arr+n);
+
+    // for(int i=0;i<n;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+
 //     //vector<datatype> nameofvector;
-    vector<int> v;
-//     //to insert elements in vector
-   v.push_back(4);
-   v.push_back(9);
-   v.push_back(3);
-   v.push_back(7);
-   v.push_back(1);
-   v.push_back(6);
+//     vector<int> v;
+// //     //to insert elements in vector
+//    v.push_back(4);
+//    v.push_back(9);
+//    v.push_back(3);
+//    v.push_back(7);
+//    v.push_back(1);
+//    v.push_back(6);
 //    //if there is not any space then the size of vector will be double 
 
 //    // to print size
@@ -46,9 +55,10 @@ int main(){
 
 // v.begin();
 // begin gives u address of first element of vector
-for(auto i=v.begin(); i!=v.end();i++){
-    cout<<*i<<" ";
-}
+// for(auto i=v.begin(); i!=v.end();i++){
+//     cout<<*i<<" ";
+// }
+// cout<<endl;
 
 //v.end
 // gives u address of next element of end
