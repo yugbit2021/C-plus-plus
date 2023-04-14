@@ -24,15 +24,6 @@ bool checkcyle(node*head){
     }
     return false; 
 }
-void printll(node*head){
-    node*temp=head;
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
-    cout<<endl;
-}
-
 void insertattail(node*&head, node*&tail ,int d){
     //linkedlist is empty
     if(head==NULL){
