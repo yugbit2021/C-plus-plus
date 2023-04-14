@@ -27,7 +27,7 @@ bool checkcyle(node*head){
 
 void createcylce(node*head,int pos){
     node*temp=head;
-    while(temp->next){
+    while(temp->next!=NULL){
         temp=temp->next;
     }
     node*t=head;
@@ -35,6 +35,34 @@ void createcylce(node*head,int pos){
         t=t->next;
     }
     temp->next=t;
+}
+void breakcyclell(node*head){
+    //check cycle present or not
+    node*p1=head;
+    node*p2=head;
+
+    bool iscycleispresent=false;
+    while(p2!=NULL && p2->next!=NULL){
+        p1=p1->next;
+    p2=p2->next->next;
+    if(p1==p2){
+        iscycleispresent= true;
+        break;
+    }
+    }
+    if(iscycleispresent==true){
+        //floyd cycle detection
+
+        //step  move p1/p2 back to head
+        p1=head;
+        //p1 & p2 move by 1x
+        while(p1->next!=p2->next){
+             p1=p1->next;
+        p2=p2->next;
+        }
+        p2->next=NULL;
+       
+    }
 }
 
 void printll(node*head){
@@ -81,6 +109,7 @@ int main(){
     int pos=2;
 
     createcylce(head,pos);
+    breakcyclell(head);
     printll(head); 
 
     return 0;
