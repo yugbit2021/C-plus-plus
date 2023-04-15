@@ -34,6 +34,9 @@ int main(){
     s.push(2);
     s.push(3);
 
-    cout<<s.top()<<" "<<endl;
+    while(!s.empty()){
+        cout<<s.top()<<" ";
+        s.pop();
+    }
     return 0;
 }
