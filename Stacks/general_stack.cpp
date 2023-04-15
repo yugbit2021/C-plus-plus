@@ -1,22 +1,23 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+template<typename U>
 
 class stack{
-    vector<int> v;
+    vector<U> v;
     public:
 
-    void push(int d){
+    void push(U d){
         v.push_back(d);
     }
 
     void pop(){
         v.pop_back();
     }
-    int size(){
+    U size(){
         return v.size();
     }
-    int top(){
+    U top(){
         return v[v.size()-1];
     }
     bool empty(){
@@ -29,14 +30,14 @@ class stack{
 };
 
 int main(){
-    stack s;
-    s.push(4);
-    s.push(2);
-    s.push(3);
+    stack<char> s;
+    s.push('A');
+    s.push('B');
+    s.push('C');
 
-    // while(!s.empty()){
-    //     cout<<s.top()<<" ";
-    //     s.pop();
-    // }
+    while(!s.empty()){
+        cout<<s.top()<<" ";
+        s.pop();
+    }
     return 0;
 }
