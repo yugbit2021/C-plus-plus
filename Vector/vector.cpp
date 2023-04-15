@@ -1,4 +1,5 @@
 #include<iostream>
+#include <bits/stdc++.h>
 #include<vector>
 using namespace std;
 
@@ -14,6 +15,7 @@ using namespace std;
 
 int main(){
 
+    // sorting algo
     // int arr[]={2,3,4,5,1,7,9,11,9};
     // int n=sizeof(arr)/sizeof(int);
     // sort(arr,arr+n);
