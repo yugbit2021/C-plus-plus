@@ -93,7 +93,7 @@ bool searchin_a_bt_tree(node*root,int key){
     }
     
     //rec case
-    if(root->data==key || searchin_a_bt_tree(root-left) || searchin_a_bt_tree(root->right)){
+    if(root->data==key || searchin_a_bt_tree(root-left,key) || searchin_a_bt_tree(root->right,key)){
         return true;
     }
     return false;
