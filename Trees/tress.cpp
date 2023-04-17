@@ -76,6 +76,18 @@ int countnode(node*root){
     return countnode(root->left)+countnode(root->right)+1;
 }
 
+int sumofnode(node*root){
+    //base case
+    if(root==NULL){
+        return 0;
+    }
+    
+
+    //rec case
+    return sumofnode(root->left)+countnode(root->right)+root->data;
+}
+
+
 int main(){
    
    node*root=buildtress();
@@ -89,4 +101,6 @@ int main(){
    postorder(root);
    cout<<endl;
    cout<<" count of nodes are "<<countnode(root)<<endl;
+   cout<<" sum of nodes are "<<sumofnode(root)<<endl;
+   
 }
