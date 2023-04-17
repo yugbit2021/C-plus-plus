@@ -111,6 +111,8 @@ int main(){
 
 	cout<<"height is "<<a.height<<endl;
 	cout<<"dia is "<<a.dia<<endl;
+    preorder(root);
+    cout<<endl;
 
     mirror(root);
 
@@ -120,5 +122,10 @@ int main(){
 
 
 	cout<<"height is "<<heightoftree(root)<<endl;
+    mirror(root);
+
+	preorder(root);
+
+	cout<<endl;
     return 0;
 }
