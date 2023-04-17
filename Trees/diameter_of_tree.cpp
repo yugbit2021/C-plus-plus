@@ -91,12 +91,34 @@ p fastdiameter(node*root){
     return n;
 }
 
+void mirror(node*root){
+    if(root==NULL){
+        return ;
+    }
+
+
+    //rec case
+    swap(root->left,root->right);
+    mirror(root->left);
+    mirror(root->right);
+
+}
+
 int main(){
     node*root=buildtress();
     cout<<diameter(root)<<endl;
-     p a=fastdiameter(root);
+    p a=fastdiameter(root);
 
 	cout<<"height is "<<a.height<<endl;
 	cout<<"dia is "<<a.dia<<endl;
+
+    mirror(root);
+
+	preorder(root);
+
+	cout<<endl;
+
+
+	cout<<"height is "<<heightoftree(root)<<endl;
     return 0;
 }
