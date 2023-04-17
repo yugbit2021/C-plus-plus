@@ -43,10 +43,7 @@ void levelwise(node*root){
 		cout<<endl;
 		if(!q.empty()){
 			q.push(NULL);
-
 		}
-		
-
 	}
 	else{
 		cout<<x->data<<" ";//8
@@ -58,17 +55,8 @@ void levelwise(node*root){
 	if(x->right!=NULL){
 		q.push(x->right);
 	}
-
 	}
-	
-
-
 	}
-	
-
-
-
-
 }
 
 int main(){
