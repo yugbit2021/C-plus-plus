@@ -86,6 +86,18 @@ int sumofnode(node*root){
     //rec case
     return sumofnode(root->left)+countnode(root->right)+root->data;
 }
+bool searchin_a_bt_tree(node*root,int key){
+    //base case
+    if(root==NULL){
+        return false;
+    }
+    
+    //rec case
+    if(root->data==key || searchin_a_bt_tree(root-left) || searchin_a_bt_tree(root->right)){
+        return true;
+    }
+    return false;
+}
 
 
 int main(){
@@ -102,5 +114,8 @@ int main(){
    cout<<endl;
    cout<<" count of nodes are "<<countnode(root)<<endl;
    cout<<" sum of nodes are "<<sumofnode(root)<<endl;
+   if(searchin_a_bt_tree(root,13)==true){
+    cout<<"key is present "<<endl;
+   }
    
 }
