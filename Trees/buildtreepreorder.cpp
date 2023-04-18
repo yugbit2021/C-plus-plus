@@ -14,50 +14,6 @@ class node{
         right=NULL;
     }
 };
-node* buildtress(){
-    int d;
-    cin>>d;
-    if(d==-1){
-        return NULL;
-    }
-    else{
-    node*root=new node(d);
-
-    root->left=buildtress();
-    root->right=buildtress();
-    return root;
-}
-}
-int heightoftree(node*root){
-    //base case
-    if(root==NULL){
-        return 0;
-    }
-
-    //rec case
-    return max(heightoftree(root->left),heightoftree(root->right))+1;
-}
-//pre-order
-void preorder(node*root){
-    if(root==NULL){
-        return;
-    }
-    cout<<root->data<<" ";
-    preorder(root->left);
-    preorder(root->right);
-
-}
-//in-order
-void inorder(node*root){
-    if(root==NULL){
-        return;
-    }
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
-
-}
-
 int ino[]={1,10,4,6,7,8,3,13,14};//LST root RST
 int preo[]={8,10,1,6,4,7,3,14,13};//root LST RST
 int i=0;
