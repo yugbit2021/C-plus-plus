@@ -57,11 +57,15 @@ int main(){
 
     int n;
     cin>>n;
-    for(int i=0;i<n;++i){
+     for(int i=0;i<n;++i){
         int d;
         cin>>d;
         insertattail(head,tail,d);
     }
+    int k;
+    cin>>k;
+    int ans=kthnodefromend(head,k);
+    cout<<ans;
     int k;
     cin>>k;
     cout<<kthnodefromend(head,k);
