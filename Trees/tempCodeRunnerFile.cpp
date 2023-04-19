@@ -1,0 +1,2 @@
+preorder(root);
+    // cout<<endl;

@@ -29,6 +29,18 @@ node*insertinbst(node*root,int data){
     }
     return root;
 }
+void noinrangek1tok2(node*root,int k1,int k2){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    //rec case
+    noinrangek1tok2(root->left,k1,k2);
+    if(root->data>=k1 && root->data<=k2){
+        cout<<root->data<<" ";
+    }
+    noinrangek1tok2(root->right,k1,k2);
+}
 
 node* buildbst(){
     node*root=NULL;
@@ -88,11 +100,12 @@ bool searchintree(node*root,int key){
 }
 int main(){
     node*root=buildbst();
-    levelwise(root);
-    if(searchintree(root,17)==true){
-        cout<<"key is present ";
-    }
-    else{
-        cout<<"key is not present ";
-    }
+    // levelwise(root);
+    // if(searchintree(root,17)==true){
+    //     cout<<"key is present ";
+    // }
+    // else{
+    //     cout<<"key is not present ";
+    // }
+    noinrangek1tok2(root ,7 , 14);
 }
