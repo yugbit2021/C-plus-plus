@@ -24,20 +24,6 @@ class pia{
         height=0;
     }
 };
-node* buildtress(){
-    int d;
-    cin>>d;
-    if(d==-1){
-        return NULL;
-    }
-    else{
-    node*root=new node(d);
-
-    root->left=buildtress();
-    root->right=buildtress();
-    return root;
-}
-}
 pia isbalance(node*root){
     pia l;
     //base case
@@ -55,46 +41,37 @@ pia isbalance(node*root){
     }
     return l;
 }
-int arr[]={1,2,3,4,5,6,7,8};
-node*buildbstusingarr(int s,int e){
-    //base case
-    if(s>e){
-        return NULL;
-    }
-    //rec case
-    int mid=(s+e)/2;
-    node*root=new node(arr[mid]);
-    root->left=buildbstusingarr(s,mid-1);
-    root->right=buildbstusingarr(mid+1,e);
-    return root;
-
-}
-void preorder(node*root){
+node*insertinbst(node*root,int data){
     if(root==NULL){
-        return;
+        root=new node(data);
+        return root;
     }
-    cout<<root->data<<" ";
-    preorder(root->left);
-    preorder(root->right);
-
+    else if(data>root->data){
+        //rst me insert kro
+        root->right=insertinbst(root->right,data);
+    }
+    else{
+        root->left=insertinbst(root->left,data);
+    }
+    return root;
 }
-
+node* buildbst(){
+    node*root=NULL;
+    int data;
+    cin>>data;//8
+    while(data!=-1){
+        root=insertinbst(root,data);
+    cin>>data;
+    }
+    return root;
+}
 int main(){
-node*root = buildtress();
-int n=sizeof(arr)/sizeof(int);
-buildbstusingarr(0,n-1);
-preorder(root);
-// if(checkbst(root)==true){
-//     cout<<"yes";
-// }
-// else{
-//     cout<<"no ";
-// }
-// pia x = isbalance(root);
-// if(x.isbal==true){
-//     cout<<" balanced";
-// }
-// else{
-//     cout<<" not";
-// }
+    node*root=buildbst();
+    pia x = isbalance(root);
+    if(x.isbal==true){
+            cout<<"yes  balanced tree"<<endl;
+}
+    else{
+           cout<<"not balanced tree ";
+}
 }

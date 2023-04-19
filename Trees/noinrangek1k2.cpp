@@ -14,19 +14,6 @@ class node{
         right=NULL;
     }
 };
-bool checkbst(node*root,int min=INT_MIN,int max=INT_MAX){
-	// base case
-	if(root==NULL){
-		return true;
-	}
-
-	// rec case
-	if(root->data>=min and root->data<=max and checkbst(root->left,min,root->data) and checkbst(root->right,root->data+1,max)){
-		return true;
-	}
-	return false;
-
-}
 node*insertinbst(node*root,int data){
     if(root==NULL){
         root=new node(data);
@@ -41,25 +28,29 @@ node*insertinbst(node*root,int data){
     }
     return root;
 }
-node*buildbst(){
+node* buildbst(){
     node*root=NULL;
     int data;
-    cin>>data;
-
+    cin>>data;//8
     while(data!=-1){
         root=insertinbst(root,data);
-        cin>>data;
+    cin>>data;
     }
     return root;
 }
-
+void noinrangek1tok2(node*root,int k1,int k2){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    //rec case
+    noinrangek1tok2(root->left,k1,k2);
+    if(root->data>=k1 && root->data<=k2){
+        cout<<root->data<<" ";
+    }
+    noinrangek1tok2(root->right,k1,k2);
+}
 int main(){
-     node*root=buildbst();
-	if(checkbst(root)==true){
-		cout<<"yes bs tree "<<endl;
-	}
-	else{
-		cout<<"not bs tree "<<endl;
-	}
-
+    node*root=buildbst();
+    noinrangek1tok2(root ,7 , 14);
 }
