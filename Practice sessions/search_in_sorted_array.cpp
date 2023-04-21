@@ -23,7 +23,8 @@ using namespace std;
 //             }
 //         else{
 //             lo=mid+1;
-//         }}
+//         }
+//           }
 //         else{
 //             if(nums[mid]<=target && target<=nums[hi]){
 //                 lo=mid+1;
