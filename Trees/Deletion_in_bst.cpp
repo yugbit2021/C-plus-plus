@@ -110,8 +110,6 @@ node* deletioninbst(node*root,int key){
 			// root->right=deletioninbst(root->right,key);
 			// return root;
 
-
-
 		}
 	}
 }
