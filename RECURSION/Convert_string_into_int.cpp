@@ -13,6 +13,7 @@ void reversewordprint(int n){
     cout<<arr[indx]<<" ";
     reversewordprint(n/10);
 }
+
 void wordprint(int n){
     //base case
     if(n==0){
@@ -31,6 +32,5 @@ int main(){
     reversewordprint(n);
     cout<<endl;
     wordprint(n);
-
     return 0;
 }
