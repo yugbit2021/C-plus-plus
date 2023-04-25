@@ -95,8 +95,6 @@ void mirror(node*root){
     if(root==NULL){
         return ;
     }
-
-
     //rec case
     swap(root->left,root->right);
     mirror(root->left);
