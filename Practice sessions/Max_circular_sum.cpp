@@ -1,7 +1,11 @@
 #include<iostream>
 using namespace std;
 
-int main(){
+int cir_sum(int arr[],int size){
     
+}
+
+int main(){
+
     return 0;
 }
