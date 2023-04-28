@@ -15,7 +15,6 @@ void insertatbottom(stack<int>&s,int ele){
     insertatbottom(s,ele);
     s.push(t);
 }
-
 void reverse(stack<int> &s){
     //base case
     if(s.empty()){
@@ -28,11 +27,20 @@ void reverse(stack<int> &s){
     reverse(s);
     insertatbottom(s,ele);
 }
+
 int main(){
     stack<int> s;
-    s.push(4);
-    s.push(2);
-    s.push(3);
+    // s.push(4);
+    // s.push(2);
+    // s.push(3);
+    int N;
+	cin>>N;
+	int d;
+	for(int i=0;i<N;i++){
+		cin>>d;
+		s.push(d);
+
+	}
     
     reverse(s);
 
