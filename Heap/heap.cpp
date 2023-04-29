@@ -30,7 +30,7 @@ public:
         if(li<=v.size()-1 && v[minindex]>v[li]){
             minindex=li;
         }
-        if(li<=v.size()-1 && v[minindex]>v[ri]){
+        if(ri<=v.size()-1 && v[minindex]>v[ri]){
             minindex=ri;
         }
         if(minindex!=index){
@@ -41,7 +41,7 @@ public:
     }
 
     //delete-->pop
-   void  delete(){
+   void  pop(){
         swap(v[1],v[v.size()-1]);
         v.pop_back();
         heapify(1);
@@ -69,9 +69,13 @@ int main(){
     h.insert(3);
     h.insert(11);
     h.insert(12);
-    h.insert(3);
+    h.insert(31);
 
     h.insert(0);
-    cout<<h.top()<<endl;
+   
+    while(!h.empty()){
+        cout<<h.top()<<" ";
+        h.pop();
+    }
     return 0;
 }
