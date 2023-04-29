@@ -19,7 +19,7 @@ int main(){
 	cin>>k;//3
 	int cou=1;
 	int data;
-
+   
 	while(1){
 		cin>>data;//3 13 4 16 9 -1
 
@@ -41,18 +41,8 @@ int main(){
 			}
 		}
 		
-	}
+    }
 
 	}
-	
-
-	
-
-
-
-
-	
-
-
 	return 0;
 }
