@@ -34,5 +34,10 @@ char arr[100];
 //cin.getline(arr,100,delimiter);//by default it has 3rd argument /n
 cin.getline(arr,100,'g'); // jaise hi g aayega ye wahi tk print karega
 cout<<arr<<endl;
+
+
+
+
+
     return 0;
 }
