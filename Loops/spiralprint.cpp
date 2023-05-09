@@ -7,7 +7,7 @@ void spiral(int arr[3][3],int tr,int tc){
     int endcol=tc-1;
     int endrow=tr-1;
 
-    while(startcol<=endcol && startrow<=endcol){
+    while(startcol<=endcol && startrow<=endrow){
 
     
 //pehla row ka work done
@@ -20,15 +20,18 @@ void spiral(int arr[3][3],int tr,int tc){
         cout<<arr[j][endcol]<<" ";
     }
     endcol--;
+    if(startrow<=endrow){
     for(int k=endcol;k>=startcol;k--){
         cout<<arr[endrow][k]<<" ";
     }
     endrow--;
+    }
+    if(startcol<=endcol){
     for(int l=endrow;l>=startrow;l--){
         cout<<arr[l][startcol]<<" ";
     }
     startcol++;
-
+    }
 }
 }
 
