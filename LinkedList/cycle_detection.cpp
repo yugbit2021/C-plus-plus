@@ -15,7 +15,7 @@ bool checkcyle(node*head){
     node*p1=head;
     node*p2=head;
 
-    while(p2!=NULL && p2->next!=NULL){
+    while(p1!=NULL && p2->next!=NULL){
         p1=p1->next;
     p2=p2->next->next;
     if(p1==p2){
@@ -42,7 +42,7 @@ void breakcyclell(node*head){
     node*p2=head;
 
     bool iscycleispresent=false;
-    while(p2!=NULL && p2->next!=NULL){
+    while(p1!=NULL && p2->next!=NULL){
         p1=p1->next;
     p2=p2->next->next;
     if(p1==p2){
