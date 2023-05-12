@@ -31,6 +31,28 @@ bool searchintree(node*root,int key){
     }
     return false;
 }
+node*insertinbst(node*root,int data){
+    if(root==NULL){
+        root=new node(data);
+        return root;
+    }else if(data>=root->data){
+        root=insertinbst(root->right,data);
+    }else{
+        root=insertinbst(root->left,data);
+    }
+    return root;
+}
+node*buildbst(){
+    node*root=NULL;
+    int data;
+    cin>>data;
+
+    while(data!=-1){
+        root=insertinbst(root,data);
+        cin>>data;
+    }
+    return root;
+}
 int main(){
     node*root=buildbst();
     if(searchintree(root,17)==true){
