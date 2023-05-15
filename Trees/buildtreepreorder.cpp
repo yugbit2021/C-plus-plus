@@ -14,6 +14,28 @@ class node{
         right=NULL;
     }
 };
+
+
+
+void inorderTraversalRecurser(node *root, vector<int> &res)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inorderTraversalHelper(root->left, res);
+    res.push_back(root->data);
+    inorderTraversalHelper(root->right, res);
+}
+
+
+vector<int> inorderTraversalRecursive(node *root)
+{
+    vector<int> res;
+    inorderTraversalRecurser(root, res);
+    return res;
+}
+
 int ino[]={1,10,4,6,7,8,3,13,14};//LST root RST
 int preo[]={8,10,1,6,4,7,3,14,13};//root LST RST
 int i=0;
@@ -39,6 +61,9 @@ node*buildtreeusinginpre(int s,int e){
     root->right=buildtreeusinginpre(k+1,e);
     return root;
 }
+
+
+
 void levelwise(node*root){
 	queue<node*> q;
 	q.push(root);//8 NULL
@@ -72,7 +97,12 @@ void levelwise(node*root){
 int main(){
     int n=sizeof(preo)/sizeof(int);
     node*root=buildtreeusinginpre(0,n-1);
-    levelwise(root);
+    //levelwise(root);
+
+    vector<int> ans=inorderTraversalRecursive(root);
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
     
 
     return 0;
