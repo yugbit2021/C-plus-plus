@@ -37,6 +37,17 @@ int kthnodefromend(node*head ,int k){
     return p1->data;
 }
 
+int kthnodefromstart(node*head ,int k){
+    node*p1=head;
+    
+
+    for(int jump=1;jump<k;jump++){
+        p1=p1->next;
+    }
+    
+    return p1->data;
+}
+
    void insertattail(node*&head, node*&tail ,int d){
     //linkedlist is empty
     if(head==NULL){
@@ -64,10 +75,8 @@ int main(){
     }
     int k;
     cin>>k;
-    int ans=kthnodefromend(head,k);
+    int ans=kthnodefromstart(head,k);
     cout<<ans;
-    int k;
-    cin>>k;
-    cout<<kthnodefromend(head,k);
+    
     return  0;
 }

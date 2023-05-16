@@ -80,7 +80,7 @@ int main(){
         insertattail(head,tail,d);
     }
     //int k=3;
-    node*nhead1=kreverse(head,3);
+    node*nhead1=kreverse(head,2);
     printll(nhead1);
 
     return 0;
