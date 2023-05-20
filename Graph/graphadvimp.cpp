@@ -32,8 +32,8 @@ int main(){
    g.addedge("putin","modi",false);
    g.addedge("putin","pope",false);
    g.addedge("modi","yogi",true);
-    g.addedge("yogi","prabhu",false);
-     g.addedge("pope","");
+   g.addedge("yogi","prabhu",false);
+   g.addedge("pope","");
 
     g.print();
 
