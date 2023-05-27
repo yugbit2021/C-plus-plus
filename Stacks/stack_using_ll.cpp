@@ -49,7 +49,7 @@ class stack{
     }
 
 
-    char size(){
+    int size(){
         return l;
     }
 
