@@ -15,7 +15,7 @@ bool checkcyle(node*head){
     node*p1=head;
     node*p2=head;
 
-    while(p1!=NULL && p2->next!=NULL){
+    while(p1!=NULL && p1->next!=NULL){
         p1=p1->next;
     p2=p2->next->next;
     if(p1==p2){
