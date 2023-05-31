@@ -41,13 +41,16 @@ int main(){
     graph g(5);
     g.addedge(0,1);
     g.addedge(0,4);
-    g.addedge(1,4);
-    g.addedge(4,3);
+    g.addedge(1,2);
     g.addedge(1,3);
+    g.addedge(1,4);
+    g.addedge(2,3);
+    g.addedge(4,3);
+    
     
 
     g.print();
 
     //I want adjacent of 3
-    g.search(3);
+    //g.search(3);
 }

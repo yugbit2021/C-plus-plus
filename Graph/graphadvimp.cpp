@@ -1,5 +1,6 @@
 #include<iostream>
 #include<list>
+#include<queue>
 #include<unordered_map>
 using namespace std;
 template <typename T>
@@ -23,19 +24,54 @@ class graph{
             cout<<endl;
         }
     }
+    void bfs(T src){
+        queue<T> q;
+        q.push(src);
+        unordered_map<T,bool> visited; //koan kon queue me dl chuka h 
+        visited[src]==true;
+
+        while(!q.empty()){
+            T x=q.front();
+        q.pop();
+        cout<<x<<" ";
+
+        for(auto nei:h[x]){
+            if(!visited[nei]){
+                q.push(nei);
+                visited[nei]=true;
+            }
+        }
+        }
+
+        
+    }
 };
 
 int main(){
-    graph<string> g;
-   g.addedge("trump","modi",true);
-   g.addedge("putin","trump",false);
-   g.addedge("putin","modi",false);
-   g.addedge("putin","pope",false);
-   g.addedge("modi","yogi",true);
-   g.addedge("yogi","prabhu",false);
-   g.addedge("pope","");
+//     graph<string> g;
+//    g.addedge("trump","modi",true);
+//    g.addedge("putin","trump",false);
+//    g.addedge("putin","modi",false);
+//    g.addedge("putin","pope",false);
+//    g.addedge("modi","yogi",true);
+//    g.addedge("yogi","prabhu",false);
+//    g.addedge("pope","");
 
-    g.print();
+
+     graph<int> g;
+    g.addedge(0,1,true);
+    g.addedge(0,4,true);
+    g.addedge(1,2,true);
+    g.addedge(1,3,true);
+    g.addedge(1,4,true);
+    g.addedge(2,3,true);
+    g.addedge(4,3,true);
+    
+    
+
+    // g.print();
+
+    g.bfs(2);
 
     //I want adjacent of 3
    // g.search(3);
