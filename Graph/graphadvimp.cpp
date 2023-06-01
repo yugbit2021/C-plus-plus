@@ -110,6 +110,34 @@ class graph{
         return distance[des];
     }
 
+
+   void dfs(T src,unordered_map<T,bool> &visited){
+
+        cout<<src<<" ";
+        visited[src]=true;
+        for(auto x:h[src]){
+            if(!visited[x]){
+                dfs(x,visited);
+            }
+        }
+        
+    }
+
+    int totalcomponents(T src,unordered_map<int,bool> &visited){
+        int comp=1;
+        dfs(src,visited);
+
+        for(auto x:h){
+            if(!visited[x.first]){
+                comp++;
+                dfs(x.first,visited);
+            }
+        }
+        cout<<endl;
+
+        return comp;
+    }
+
 };
 
 int main(){
@@ -132,15 +160,33 @@ int main(){
     g.addedge(1,2,true);
     g.addedge(2,3,true);
     
-    
-    
+    //2nd component
+    g.addedge(11,12,true);
+    g.addedge(11,13,true);
+    g.addedge(12,13,true);
 
-    // g.print();
+//3rd component
+    g.addedge(100,101,true);
+    g.addedge(100,102,true);
+
+
+       unordered_map<int,bool> visited;
+//    g.dfs(2,visited);
+   
+
+    
+    
+cout<<"Total components are "<<g.totalcomponents(2,visited);
+
 
    // g.bfs(2);
    //g.mindistance(0);
-   cout<<g.sssp(2,0);
+   //cout<<g.sssp(2,0);
 
     //I want adjacent of 3
    // g.search(3);
+
+
+    
+   //g.print();
 }
