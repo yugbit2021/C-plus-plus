@@ -34,7 +34,7 @@ pia isbalance(node*root){
     pia x=isbalance(root->left);
     pia y=isbalance(root->right);
     l.height=max(x.height,y.height)+1;
-    if(x.isbal==true && y.isbal==true && abs(x.height-y.height)<1){
+    if(x.isbal==true && y.isbal==true && abs(x.height-y.height)<=1){
         l.isbal=true;
     }else{
         l.isbal=false;
