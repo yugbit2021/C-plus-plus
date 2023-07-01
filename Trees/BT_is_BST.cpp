@@ -55,6 +55,7 @@ node*buildbst(){
 
 
 int main(){
+    
      node*root=buildbst();
      if(checkbst(root)==true){
         cout<<"It is BST";
