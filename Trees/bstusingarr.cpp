@@ -59,11 +59,11 @@ node* buildbstusingarr(int s,int e){
 	return root;
 }
 
+
 int main(){
 	int n=sizeof(arr)/sizeof(int);
 	node*root=buildbstusingarr(0,n-1);
 	levelwise(root);
 
-	
 	 }
 	

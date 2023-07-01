@@ -52,24 +52,14 @@ node*buildbst(){
     }
     return root;
 }
-void preorder(node*root){
-    if(root==NULL){
-        return ;
-    }
-    cout<<root->data<<" ";
-    preorder(root->left);
-    preorder(root->right);
-}
+
 
 int main(){
      node*root=buildbst();
-
-	// if(checkbst(root)==true){
-	// 	cout<<"yes bs tree "<<endl;
-	// }
-	// else{
-	// 	cout<<"not bs tree "<<endl;
-	// }
-    preorder(root);
+     if(checkbst(root)==true){
+        cout<<"It is BST";
+     }else{
+        cout<<"Not a BST";
+     }
 
 }
