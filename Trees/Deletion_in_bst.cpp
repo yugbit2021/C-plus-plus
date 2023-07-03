@@ -14,6 +14,7 @@ class node{
         right=NULL;
     }
 };
+
 node*insertinbst(node*root,int data){
     if(root==NULL){
         root=new node(data);
@@ -28,6 +29,7 @@ node*insertinbst(node*root,int data){
     }
     return root;
 }
+
 node*buildbst(){
     node*root=NULL;
     int data;
@@ -46,16 +48,14 @@ node* deletioninbst(node*root,int key){
 		return NULL;
 
 	}
-
-
 	// rec case
-	// key lie in lst
-	if(key<root->data){
+	// key lies in lst
+	if(key < root->data){
 		root->left=deletioninbst(root->left,key);
 		return root;
 	}
-	// key lie rst
-	else if(key>root->data){
+	// key lies rst
+	else if(key > root->data){
 		root->right=deletioninbst(root->right,key);
 		return root;
 	}
