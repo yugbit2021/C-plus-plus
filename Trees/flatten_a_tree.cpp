@@ -14,6 +14,7 @@ class node{
         right=NULL;
     }
 };
+
 class link{
     public:
     node*head;
@@ -23,6 +24,8 @@ class link{
         tail=NULL;
     }
 };
+
+
 node*insertinbst(node*root,int data){
     if(root==NULL){
         root=new node(data);
@@ -37,6 +40,8 @@ node*insertinbst(node*root,int data){
     }
     return root;
 }
+
+
 node*buildbst(){
     node*root=NULL;
     int data;
@@ -48,6 +53,8 @@ node*buildbst(){
     }
     return root;
 }
+
+
 link convertbstintoll(node*root){
     link l;
     if(root==NULL){
@@ -67,6 +74,7 @@ link convertbstintoll(node*root){
               l.head=le.head;
               l.tail=root;
     }
+    //only rst not lst
     else if(root->left==NULL && root->right!=NULL){
            link ri=convertbstintoll(root->right);
            root->left=ri.head;
@@ -74,6 +82,7 @@ link convertbstintoll(node*root){
            l.tail=ri.tail;
 
 }
+//Both exists
 else{
      link le=convertbstintoll(root->left);
      link ri=convertbstintoll(root->right);
@@ -85,6 +94,8 @@ else{
 }
    return l;
 }
+
+
 void printll(node*root){
      while(root->left!=NULL){
      cout<<root->data<<" ";
@@ -92,6 +103,8 @@ void printll(node*root){
 }
     cout<<endl;
 }
+
+
 int main(){
     node*root=buildbst();
     link l= convertbstintoll(root);
