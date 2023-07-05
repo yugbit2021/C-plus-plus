@@ -40,6 +40,8 @@ node*buildbst(){
     }
     return root;
 }
+
+
 void rightview(node*root,int cl,int &mlptn){// max level print till now (mlptn) , current level cl
 if(root==NULL){
     return;
@@ -49,7 +51,6 @@ if(mlptn<cl){
     mlptn++;
 }
    
-
     rightview(root->right,cl+1,mlptn);
     rightview(root->left,cl+1,mlptn);
 }
