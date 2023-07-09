@@ -22,6 +22,7 @@ using namespace std;
 //     }
 //     return min(x,min(y,z))+1;
 // }
+
 //topdown
 int dpminstepstoreach1(int n,int *arr){//10
     //base case 
