@@ -49,11 +49,13 @@ int bptotalways(int m,int n){
     return arr[m][n];
 }
 int main(){
-    int m;
+    //Total ways to go from (0,0) to src 
+    // You can go either right or down
+    int m; // row
     cin>>m;
-    int n;
+    int n; // col 
     cin>>n;
-    cout<<totalways(m,n)<<endl;
+    cout<<totalways(m,n)<<endl; //(0,0) to (m,n);
 
     int arr[100][100]={0};
     cout<<tdtotalways(m,n,arr)<<endl;
