@@ -2,6 +2,9 @@
 #include<climits>
 using namespace std;
 
+//cr = current row
+//cc = current column
+
 // int mincost(int cost[4][4],int cr,int cc,int drn,int dcn){
 
 //     if(drn==0 && dcn==0){
@@ -61,11 +64,18 @@ int bpmincost(int cost[4][4],int drn,int dcn){
     return arr[drn][dcn];
 }
 int main(){
-    int cost[4][4]={{2,3,1,4},{3,5,3,2},{2,6,6,1},{3,4,2,5}};
-    int drn;
+    int cost[4][4]={
+        {2,3,1,4},
+        {3,5,3,2},
+        {2,6,6,1},
+        {3,4,2,5}};
+
+    int drn;//destination row number
     cin>>drn;
-    int dcn;
+
+    int dcn;//destination column number
     cin>>dcn;
+
     //cout<<mincost(cost,0,0,drn,dcn)<<endl;
 
     int arr[100][100]={0};
