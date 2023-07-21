@@ -15,7 +15,6 @@ using namespace std;
 //         return INT_MAX;
 //     }
     
-
 //     //rec case
 //     int op1=mincost(cost,cr,cc,drn-1,dcn);
 //     int op2=mincost(cost,cr,cc,drn,dcn-1);
@@ -45,8 +44,6 @@ int tdmincost(int cost[4][4],int cr,int cc,int drn,int dcn,int arr[100][100]){
 int bpmincost(int cost[4][4],int drn,int dcn){
     int arr[100][100]={0};
 
-    
-
     for(int i=0;i<=drn;i++){
     for(int j=0;j<=dcn;j++){
     if(i==0 && j==0){
@@ -57,10 +54,12 @@ int bpmincost(int cost[4][4],int drn,int dcn){
     }
     else if(j==0){
         arr[i][j]=arr[i-1][j]+cost[i][j];
-    }else{
+    }
+    else{
     arr[i][j]=min(arr[i-1][j],arr[i][j-1])+cost[i][j];
     }
-    }}
+    }
+}
     return arr[drn][dcn];
 }
 int main(){
