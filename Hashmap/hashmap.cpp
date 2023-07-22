@@ -16,15 +16,14 @@ class node{
 
 class hashmap{
     node**arr;
-    int ts;
-    int cs;
-    public:
-    hashmap(int s=7){
-        arr=new node*[s];
-        int cs=0;
-        ts=s;
-
-        for(int i=0;i<s;i++){
+    int ts;//totalsize
+    int cs;//currentsize
+public:    
+    hashmap(int size){
+        arr=new node*[size];
+        cs=0;
+        ts=size;
+        for(int i=0;i<size;i++){
             arr[i]=NULL;
         }
     }
@@ -32,45 +31,38 @@ class hashmap{
     int hashfunction(string key){
         int ans=0;
         int mult=1;
-
-       for (int i=0;i<key.length();i++){
-        ans=(ans%ts+(key[0]%ts+mult%ts)%ts)%ts;
-        mult=(mult*29)%ts;  
+        for(int i=0;i<key.length();i++){
+            ans=((ans%ts+key[0]%ts*mult%ts)%ts)%ts;
+            mult=(mult*29)%ts;
+        }
+        return ans;
     }
-    return ans;
-    
-    }
-
-    //rehashing
 
     void rehashing(){
         node**oldarr=arr;
         int oldts=ts;
+
        arr= new node*[ts*2];
        ts=2*ts;
-
+       cs=0;
        for(int i=0;i<ts;i++){
         arr[i]=NULL;
        }
 
-       cs=0;
-
-       //copy kro oldarr ke elements ko in new arr
+       //copy oldarr se elemenys ko arr mai
        for(int i=0;i<oldts;i++){
-       node*head=oldarr[i];//1600
-
+       node*head=oldarr[i];
        while(head!=NULL){
-       insert(head->k,head->v);
+        insert(head->k,head->v);
        head=head->next;
-    }
+       }
+       }
     }
 
-    }
-
-    //insert
-    void insert(string ke,string vl){
-        int index=hashfunction(ke);
-        node*n=new node(ke,vl);
+    //insert 
+    void insert(string key,string val){
+        int index=hashfunction(key);
+        node*n=new node(key,val);
         //insert at front
         n->next=arr[index];
         arr[index]=n;
@@ -80,18 +72,16 @@ class hashmap{
         }
     }
 
-    void print(){
-        for(int i=0;i<ts;i++){
-        cout<<i<<" : ";
-
-        node*head=arr[i];
-        while(head!=NULL){
-            cout<<"( "<<head->k<<", "<<head->v<<"),";
-            head=head->next;
-        }
-        cout<<endl;
-    }
-    }
+   void print(){
+       for(int i=0;i<ts;i++){
+       cout<<i<<" : ";
+       node*head=arr[i];
+       while(head!=NULL){
+        cout<<"( "<<head->k<<", "<<head->v<<"),";
+        head=head->next;
+       }
+       cout<<endl;
+    }}
 
     bool search(string key){
         int index=hashfunction(key);
@@ -106,18 +96,20 @@ class hashmap{
     }
 };
 
+
 int main(){
-hashmap h;
-h.insert("abc","Blue");
-h.insert("bac","Green");
-h.insert("dqc","Green");
-h.insert("bda","Red");
+    hashmap h(7);
+    h.insert("abc","red");
+    h.insert("lma","blue");
+    h.insert("pwr","green");
+    h.insert("cba","voilet");
+    h.insert("xhy","yellow");
 
-h.print();
-cout<<endl;
-if(h.search("bqc")==true){
-    cout<<"key is present";
-}
+    h.print();
 
-
+   if( h.search("pwr")==true){
+    cout<<"Key is present"<<endl;
+   }else{
+    cout<<"Not present"<<endl;
+   }
 }
