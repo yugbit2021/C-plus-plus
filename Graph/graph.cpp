@@ -1,6 +1,8 @@
 #include<iostream>
 #include<list>
+#include<unordered_map>
 using namespace std;
+template<typename T>
 
 //travesal of a graph gives you tree = skew tree
 
@@ -14,13 +16,12 @@ using namespace std;
 //Edges is O(N*N)
 
 class graph{
-    list<int>*l;
-    int n;
+    unordered_map<T,list<T>> l;
 public:
-    graph(int N){
-        n=N;
-        l=new list<int>[N]; // array of size 5 will be formed where list is stored
-    }
+    // graph(int N){
+    //     n=N;
+    //     l=new list<int>[N]; // array of size 5 will be formed where list is stored
+    // }
 
     void addedge(int u,int v,bool bidirectional=true){
         l[u].push_back(v);
@@ -30,13 +31,13 @@ public:
     }
 
     void print(){
-        for(int i=0;i<n;i++){
-        cout<<i<<" : ";
-        for(auto x:l[i]){
-            cout<<x<<" ";
+        for(auto x:l){
+            cout<<x.first<<" : ";
+            for(auto y:x.second){
+                cout<<y<<" ";
+            }
+            cout<<endl;
         }
-        cout<<endl;
-    }
     }
 
     search(int a){
@@ -49,7 +50,7 @@ public:
 };
 
 int main(){
-    graph g(5);
+    graph<int> g;
     g.addedge(0,1);
     g.addedge(0,4);
     g.addedge(1,2);
