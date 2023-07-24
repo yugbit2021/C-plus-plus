@@ -6,6 +6,7 @@ int main(){
     list<int> l;
 
     l.push_back(7);
+    l.push_front(11);
     l.push_back(9);
     l.push_back(1);
     l.push_back(6);
