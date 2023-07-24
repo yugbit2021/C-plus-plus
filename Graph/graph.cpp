@@ -2,21 +2,29 @@
 #include<list>
 using namespace std;
 
+//travesal of a graph gives you tree = skew tree
+
+//directed (travers in single direction )
+//undirected (travers in both direction)
+
+//weighted graph (path gives you some cost)
+//unweighted graph (does't provids you any cost)
+
+//complete graph = every vertices is connected to all vertices including itself
+//Edges is O(N*N)
+
 class graph{
-    //int*arr=new int[N];
     list<int>*l;
     int n;
-    public:
-
+public:
     graph(int N){
         n=N;
-        l=new list<int>[N];
+        l=new list<int>[N]; // array of size 5 will be formed where list is stored
     }
 
-    void addedge(int u,int v,bool bidre=true){
+    void addedge(int u,int v,bool bidirectional=true){
         l[u].push_back(v);
-
-        if(bidre==true){
+        if(bidirectional==true){
             l[v].push_back(u);
         }
     }
@@ -28,12 +36,15 @@ class graph{
             cout<<x<<" ";
         }
         cout<<endl;
-    }}
+    }
+    }
 
-    void search(int a){
+    search(int a){
         for(auto x:l[a]){
             cout<<x<<" ";
+
         }
+        cout<<endl;
     }
 };
 
@@ -47,10 +58,8 @@ int main(){
     g.addedge(2,3);
     g.addedge(4,3);
     
-    
-
     g.print();
 
-    //I want adjacent of 3
-    //g.search(3);
+   // I want adjacent of 3
+   // g.search(3);
 }
