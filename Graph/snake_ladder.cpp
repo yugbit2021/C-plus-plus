@@ -8,7 +8,7 @@ template<typename T>
 class graph{
     unordered_map<T,list<T>> l;
 public:
-    void addedge(int u,int v,bool bidirectional=true){
+    void addedge(int u,int v,bool bidirectional=false){
         l[u].push_back(v);
         if(bidirectional==true){
             l[v].push_back(u);
@@ -56,13 +56,25 @@ public:
 
 int main(){
     graph<int> g;
-    g.addedge(0,1);
-    g.addedge(0,4);
-    g.addedge(1,2);
-    g.addedge(1,3);
-    g.addedge(1,4);
-    g.addedge(2,3);
-    g.addedge(4,3);
+   int board[40]={0};
+   board[2] = 13;
+   board[5] = 2;
+   board[9] = 18;
+   board[18] = 11;
+   board[17]=-13;
+   board[20] = -14;
+   board[24] = -8;
+   board[25] = 10;
+   board[32] = -2;
+   board[34] = -22;
 
-    cout<<g.sssp(0,2);
+   for(int si=0;si<=35;si++){//source index
+   for(int dice=1;dice<=6;dice++){
+        int di=si+dice+board[si+dice];//destination index;
+         g.addedge(si,di);
+   }
+   }
+
+   cout<<g.sssp(0,36)<<endl;
+
 }
