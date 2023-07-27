@@ -118,10 +118,14 @@ int main(){
    postorder(root);
    cout<<endl;
    cout<<"count of nodes are "<<countnode(root)<<endl;
+
    cout<<"sum of nodes are "<<sumofnode(root)<<endl;
+   
    cout<<"height of tree "<<heightoftree(root)<<endl;
+
    int key;
    cin>>key;
+
    if(searchin_a_bt_tree(root,key)==true){
     cout<<"key is present "<<endl;
    }
