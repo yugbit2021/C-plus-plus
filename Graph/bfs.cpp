@@ -8,24 +8,14 @@ template<typename T>
 class graph{
     unordered_map<T,list<T>> l;
 public:
-    void addedge(int u,int v,bool bidirectional=true){
+    void addedge(T u,T v,bool bidirectional=true){
         l[u].push_back(v);
         if(bidirectional==true){
             l[v].push_back(u);
         }
     }
 
-    void print(){
-        for(auto x:l){
-            cout<<x.first<<" : ";
-            for(auto y:x.second){
-                cout<<y<<" ";
-            }
-            cout<<endl;
-        }
-    }
-
-   void search(int a){
+   void search(T a){
         for(auto x:l[a]){
             cout<<x<<" ";
 
