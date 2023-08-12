@@ -2,6 +2,8 @@
 #include<climits>
 using namespace std;
 
+//kadane's algorithm
+
 int max_sum(int arr[],int size){
     int max_so_far=INT_MIN;
     int sum=0;
